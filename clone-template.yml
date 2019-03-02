@@ -13,6 +13,9 @@
       template: "{{ VCENTER_TEMPLATE }}"
       datacenter: "{{ VCENTER_DATACENTER }}"
       folder: "{{ VCENTER_FOLDER }}"
-      state: poweredon
       cluster: "{{ VCENTER_CLUSTER }}"
       wait_for_ip_address: yes
+      customization:
+        not: important
+      customization_spec: "hostname-win"
+      state: poweredon
