@@ -1,7 +1,8 @@
 ---
-- hosts: all
+- name: create the VM
+  hosts: all
   gather_facts: false
-  connection: local
+  # connection: local
   # vars_prompt:
   #  - name: "vsphere_password"
   #    prompt: "vSphere Password"
@@ -19,12 +20,12 @@
       username: '{{ vsphere_user }}'
       password: '{{ vsphere_password }}'
       validate_certs: no
-      esxi_hostname: esxi_server
-      datacenter: 'ZWINDLER'
-      folder: A_DEPLOYER
+      esxi_hostname: '{{ esxi_server }}'
+      datacenter: '{{ esxi_datacenter }}'
+      folder: '{{ esxi_folder }}'
       name: '{{ inventory_hostname }}'
       state: poweredon
-      guest_id: rhel7_64Guest
+      guest_id: '{{ esxi_guest_id }}'
       annotation: "{{ notes }} - {{ creationdate }}"
       disk:
       - size_gb: 150
@@ -32,27 +33,27 @@
         datastore: '{{ vsphere_datastore }}'
       networks:
       - name: server_network
-        ip: '{{ custom_ip }}'
-        netmask: 255.255.252.0
-        gateway: 192.168.100.1
-        dns_servers:
-        - 192.168.100.10
-        - 192.168.101.10
+      #  ip: '{{ custom_ip }}'
+      #  netmask: 255.255.252.0
+      #  gateway: 192.168.100.1
+      #  dns_servers:
+      #  - 192.168.100.10
+      #  - 192.168.101.10
       hardware:
         memory_mb: 4096
         num_cpus: 2
-      customization:
-        dns_servers:
-        - 192.168.100.10
-        - 192.168.101.10
-        domain : zwindler.fr
-        hostname: '{{ inventory_hostname }}'
-      template: tmpl-rhel-7-3-app
-      wait_for_ip_address: yes
-  - name: add to ansible hosts file
-    lineinfile:
-      dest: /etc/ansible/hosts
-      insertafter: '^\[{{ ansible_host_group }}\]'
-      line: '{{ item }}'
-    with_items: '{{play_hosts}}'
-    run_once: true
+      #customization:
+      #  dns_servers:
+      #  - 192.168.100.10
+      #  - 192.168.101.10
+      #  domain : zwindler.fr
+      #  hostname: '{{ inventory_hostname }}'
+      template: '{{ esxi_template }}'
+  #    wait_for_ip_address: yes
+  #- name: add to ansible hosts file
+  #  lineinfile:
+  #    dest: /etc/ansible/hosts
+  #    insertafter: '^\[{{ ansible_host_group }}\]'
+  #    line: '{{ item }}'
+  #  with_items: '{{play_hosts}}'
+  #  run_once: true
