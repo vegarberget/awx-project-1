@@ -17,5 +17,5 @@
       wait_for_ip_address: yes
       customization:
         not: important
-      customization_spec: "hostname-win"
+      customization_spec: "{{ VCENTER_GUEST_DOMAIN }}"
       state: poweredon
