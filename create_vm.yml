@@ -25,14 +25,14 @@
       folder: '{{ esxi_folder }}'
       name: '{{ inventory_hostname }}'
       state: poweredon
-      guest_id: '{{ esxi_guest_id }}'
-      annotation: "{{ notes }} - {{ creationdate }}"
+      #guest_id: '{{ esxi_guest_id }}'
+      #annotation: "{{ notes }} - {{ creationdate }}"
       disk:
       - size_gb: 150
         type: thin
         datastore: '{{ vsphere_datastore }}'
-      networks:
-      - name: server_network
+      #networks:
+      #- name: server_network
       #  ip: '{{ custom_ip }}'
       #  netmask: 255.255.252.0
       #  gateway: 192.168.100.1
