@@ -1,62 +1,9 @@
 ---
-- name: Install MS SQL Server
+- name: Install MSSQL 
   hosts: "{{ VCENTER_GUEST_NAME }}.lab.local"
 
-#Install SQL Server 2017 Developer Edition
-#- name: Create temp folder
-#  win_file:
-#    path: "{{ mssql_temp_download_path }}"
-#    state: directory
-
-#- name: Create install folder
-#  win_file:
-#    path: "{{ mssql_installation_path }}"
-#    state: directory
-  
-#- name: Fetch SQL Media Downloader
-#  win_get_url:
-#    url: "{{ mssql_installation_source }}"
-#    dest: "{{ mssql_temp_download_path }}\\SQLServer2017-SSEI-Dev.exe"
-#    force: no
-
-#- name: Use Media Downloader to fetch SQL Installation CABs to {{ mssql_installation_path }}
-#  win_shell: "{{ mssql_temp_download_path }}\\SQLServer2017-SSEI-Dev.exe /Action=Download /MediaPath={{ mssql_installation_path }} /MediaType=CAB /Quiet"
-#  args:
-#    creates: "{{ mssql_installation_path }}\\SQLServer2017-DEV-x64-ENU.exe"
-
-#- name: Extract Installation Media
-#  win_shell:  "{{ mssql_installation_path }}\\SQLServer2017-DEV-x64-ENU.exe /X:{{ mssql_installation_path }}\\Media /Q"
-#  args:
-#    creates: "{{ mssql_installation_path }}\\Media\\SETUP.EXE"
   tasks:
-  - name: Install SQL Server
-    win_dsc:
-    resource_name: SQLSetup
-    Action: Install
-    UpdateEnabled: True
-    SourcePath: "{{ mssql_installation_path }}"
-    InstanceName: "{{ mssql_instance_name }}"
-#    InstallSharedDir: "{{ mssql_installshared_path }}"
-#    InstallSharedwowDir: "{{ mssql_installsharedwow_path }}"
-#    InstanceDir: "{{ mssql_instance_path }}"
-#    SQLUserDBDir: "{{ mssql_sqluserdata_path }}"
-#    SQLUserDBLogDir: "{{ mssql_sqluserlog_path }}"
-#    SQLTempDBDir: "{{ mssql_sqltempDB_path }}"
-#    SQLTempDBLogDir: "{{ mssql_sqltempDBlog_path }}"
-#    Features: "{{ mssql_features }}"
-#    SQLCollation: "{{ mssql_collation }}"
-#    BrowserSvcStartupType: "{{ mssql_browsersvc_mode }}"
-#    SuppressReboot: "{{ mssql_suppress_reboot }}"
-    SQLSysAdminAccounts: "{{ mssql_sysadmin_accounts }}"
-#    PsDscRunAsCredential_username: '{{ domain_admin_user }}'
-#    PsDscRunAsCredential_password: '{{ domain_admin_password }}'
-    no_log: true
-    tags: install_sql
-
-  - name: Configure the MSSQLSERVERAGENT Service
-    win_service:
-    name: sqlserveragent
-    state: started
-#    username: "{{ mssql_agentsvc_account }}"
-#    password: "{{ mssql_agentsvc_account_pass }}"
-    tags: install_sql
+  - name: Install MSSQL 
+    win_chocolatey:
+    name: sql-server-2017
+    state: present
