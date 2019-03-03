@@ -48,8 +48,8 @@
 #    BrowserSvcStartupType: "{{ mssql_browsersvc_mode }}"
 #    SuppressReboot: "{{ mssql_suppress_reboot }}"
     SQLSysAdminAccounts: "{{ mssql_sysadmin_accounts }}"
-    PsDscRunAsCredential_username: '{{ domain_admin_user }}'
-    PsDscRunAsCredential_password: '{{ domain_admin_password }}'
+#    PsDscRunAsCredential_username: '{{ domain_admin_user }}'
+#    PsDscRunAsCredential_password: '{{ domain_admin_password }}'
     no_log: true
     tags: install_sql
 
