@@ -5,6 +5,7 @@ powershell Install-WindowsFeature Net-Framework-Core -source \\pdc\delt\install\
 \\pdc\delt\install\Biztalk-Deploy-master\bin\VCRedist\x86\vcredist.exe /install /passive
 “\\pdc\delt\install\BTS_2016_Dev\BizTalk Server\setup.exe” /PASSIVE /NORESTART /CABPATH \\pdc\delt\install\Biztalk-Deploy-master\bin\BtsRedistW2K12R2EN64\BtsRedistW2K12R2EN64.cab /ADDLOCAL SSOAdmin,SSOSERVER
 “\\pdc\delt\install\BTS_2016_Dev\BizTalk Server\setup.exe” /PASSIVE /NORESTART /CABPATH \\pdc\delt\install\Biztalk-Deploy-master\bin\BtsRedistW2K12R2EN64\BtsRedistW2K12R2EN64.cab /ADDLOCAL BizTalk,WMI,AdminAndMonitoring,AdminTools,BAMTools,BizTalkAdminSnapIn,HealthActivityClient,MonitoringAndTracking,PAM,Documentation,BizTalk,WMI,Engine,MOT,MSMQ,Runtime
+"\\pdc\delt\install\Biztalk-Deploy-master\bin\ScheduledTaskAdapter v6.0.0\ScheduledTaskAdapter v6.0.0\ScheduledTaskAdapter.msi" /passive
 “C:\Program Files (x86)\Microsoft BizTalk Server 2016\Configuration.exe” /S \\pdc\delt\install\Biztalk-Deploy-master\BiztalkConfig\BizTalkConfig.xml
 
 

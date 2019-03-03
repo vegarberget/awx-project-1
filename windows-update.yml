@@ -3,12 +3,14 @@
   hosts: "{{ VCENTER_GUEST_NAME }}.lab.local"
 
   tasks:
+  - name: Windows Update
     win_updates:
-      category_names:
+    category_names:
         - Application
         - CriticalUpdates
         - DefinitionUpdates
         - SecurityUpdates
         - Updates
-    reboot: yes
-    reboot_timeout: 420
+  - name: Windows Reboot
+    win_reboot:
+    when: update_result.reboot_required

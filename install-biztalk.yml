@@ -13,5 +13,15 @@
     win_shell: “\\pdc\delt\install\BTS_2016_Dev\BizTalk Server\setup.exe” /PASSIVE /NORESTART /CABPATH \\pdc\delt\install\Biztalk-Deploy-master\bin\BtsRedistW2K12R2EN64\BtsRedistW2K12R2EN64.cab /ADDLOCAL SSOAdmin,SSOSERVER
   - name: Install Biztalk features
     win_shell: “\\pdc\delt\install\BTS_2016_Dev\BizTalk Server\setup.exe” /PASSIVE /NORESTART /CABPATH \\pdc\delt\install\Biztalk-Deploy-master\bin\BtsRedistW2K12R2EN64\BtsRedistW2K12R2EN64.cab /ADDLOCAL BizTalk,WMI,AdminAndMonitoring,AdminTools,BAMTools,BizTalkAdminSnapIn,HealthActivityClient,MonitoringAndTracking,PAM,Documentation,BizTalk,WMI,Engine,MOT,MSMQ,Runtime
+  - name: Install Biztalk development
+    win_shell: “\\pdc\delt\install\BTS_2016_Dev\BizTalk Server\setup.exe” /PASSIVE /NORESTART /CABPATH \\pdc\delt\install\Biztalk-Deploy-master\bin\BtsRedistW2K12R2EN64\BtsRedistW2K12R2EN64.cab /ADDLOCAL BizTalk,WMI,AdapterImportWizard,BizTalkExplorer,BizTalkExtensions,DeploymentWizard,Designer,Development,Migration,MsEDIMigration,MsEDISchemaExtension,MsEDISDK,OrchestrationDesigner,PipelineDesigner,SDK,TrackingProfileEditor,VSTools,WCFDevTools,XMLTools
+  - name: Install Scheduled Adapter
+    win_shell: "\\pdc\delt\install\Biztalk-Deploy-master\bin\ScheduledTaskAdapter v6.0.0\ScheduledTaskAdapter v6.0.0\ScheduledTaskAdapter.msi" /passive
+  - name: Configure Biztalk
+    win_shell: 
+  - name: Configure Biztalk
+    win_shell: 
+  - name: Configure Biztalk
+    win_shell: 
   - name: Configure Biztalk
     win_shell: “C:\Program Files (x86)\Microsoft BizTalk Server 2016\Configuration.exe” /S \\pdc\delt\install\Biztalk-Deploy-master\BiztalkConfig\BizTalkConfig.xml
