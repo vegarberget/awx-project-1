@@ -12,6 +12,7 @@
       name: "{{ VCENTER_GUEST_NAME }}"
       template: "{{ VCENTER_TEMPLATE }}"
       datacenter: "{{ VCENTER_DATACENTER }}"
+      datastore: "{{ VCENTER_DATASTORE }}"
       folder: "{{ VCENTER_FOLDER }}"
       cluster: "{{ VCENTER_CLUSTER }}"
       wait_for_ip_address: yes
