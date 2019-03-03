@@ -5,12 +5,10 @@
   tasks:
   - name: Windows Update
     win_updates:
-    category_names:
-        - Application
-        - CriticalUpdates
-        - DefinitionUpdates
-        - SecurityUpdates
-        - Updates
-  - name: Windows Reboot
-    win_reboot:
-    when: update_result.reboot_required
+      category_names:
+      - Application
+      - CriticalUpdates
+      - DefinitionUpdates
+      - SecurityUpdates
+      - Updates
+      reboot: yes  
