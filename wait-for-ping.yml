@@ -1,4 +1,9 @@
 ---
+# This playbook uses the win_ping module to test connectivity to Windows hosts
 - name: sleep for 300 seconds and continue with play
-  wait_for: timeout=300
-  delegate_to: localhost
+  hosts: all 
+
+  tasks:
+  - name: sleep for 300 seconds and continue with play
+    wait_for: timeout=300
+    delegate_to: localhost
