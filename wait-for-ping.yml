@@ -1,13 +1,4 @@
 ---
-- name: Wait for server to restart
-  hosts: all
-  gather_facts: false
- 
-  tasks: 
-  - name: Wait for server to restart
-    local_action:
-    module: wait_for
-       host="{{ VCENTER_GUEST_NAME }}"
-       port=5985
-       delay=1
-       timeout=300
+- name: sleep for 300 seconds and continue with play
+  wait_for: timeout=300
+  delegate_to: localhost
