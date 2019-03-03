@@ -9,16 +9,16 @@ powershell Install-WindowsFeature Net-Framework-Core -source \\pdc\delt\install\
 “C:\Program Files (x86)\Microsoft BizTalk Server 2016\Configuration.exe” /S \\pdc\delt\install\Biztalk-Deploy-master\BiztalkConfig\BizTalkConfig.xml
 
 
-msiexec.exe /i “C:\Images\BTS\BizTalk Server\LOB\Msi\Microsoft_BizTalk_Adapters_for_Enterprise_Applications.msi” /norestart /qn /lv c:\lob.log
+msiexec.exe /i “\\pdc\delt\install\BTS_2016_Dev\BizTalk Server\LOB\Msi\Microsoft_BizTalk_Adapters_for_Enterprise_Applications.msi” /norestart /qn /lv c:\lob.log
 
-msiexec.exe /i “C:\Images\BTS\BizTalk Server\ASDK_x86\AdapterFramework.msi” /quiet MUOPTIN=”Yes”
+msiexec.exe /i “\\pdc\delt\install\BTS_2016_Dev\BizTalk Server\ASDK_x86\AdapterFramework.msi” /quiet MUOPTIN=”Yes”
 
-msiexec.exe /i “C:\Images\BTS\BizTalk Server\ASDK_x64\AdapterFramework64.msi” /quiet MUOPTIN=”Yes”
+msiexec.exe /i “\\pdc\delt\install\BTS_2016_Dev\BizTalk Server\ASDK_x64\AdapterFramework64.msi” /quiet MUOPTIN=”Yes”
 
-msiexec.exe /i “C:\Images\BTS\BizTalk Server\AdapterPack_x86\AdaptersSetup.msi” /qn
+msiexec.exe /i “\\pdc\delt\install\BTS_2016_Dev\BizTalk Server\ASDK_x86\AdaptersSetup.msi” /qn
 
-msiexec.exe /i “C:\Images\BTS\BizTalk Server\AdapterPack_x64\AdaptersSetup64.msi” /qn
+msiexec.exe /i “\\pdc\delt\install\BTS_2016_Dev\BizTalk Server\ASDK_x64\AdaptersSetup64.msi” /qn
 
-msiexec.exe /i “C:\Images\BTS\BizTalk Server\ESBT_x64\BizTalk ESB Toolkit 2.3.msi” /qn
+msiexec.exe /i “\\pdc\delt\install\BTS_2016_Dev\BizTalk Server\ESBT_x64\BizTalk ESB Toolkit 2.3.msi” /qn
 
 rmdir c:\Images\BTS /S /Q
