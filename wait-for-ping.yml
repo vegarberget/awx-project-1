@@ -1,8 +1,13 @@
 ---
-- name: Wait for server to restart
-  local_action:
-  module: wait_for
-    host="{{ VCENTER_GUEST_NAME }}"
-    port=5985
-    delay=1
-    timeout=300
+- name: create the VM
+  hosts: all
+  gather_facts: false
+ 
+  tasks: 
+  - name: Wait for server to restart
+    local_action:
+    module: wait_for
+       host="{{ VCENTER_GUEST_NAME }}"
+       port=5985
+       delay=1
+       timeout=300
