@@ -1,9 +1,10 @@
 ---
-# This playbook uses the win_ping module to test connectivity to Windows hosts
-- name: sleep for 300 seconds and continue with play
+- name: Wait for y port to become open on the host, don't start checking for x seconds
   hosts: all 
 
   tasks:
-  - name: sleep for 300 seconds and continue with play
-    wait_for: timeout=300
-    delegate_to: localhost
+  - name: Wait for y port to become open on the host, don't start checking for x seconds
+    wait_for:
+      host: {{ VCENTER_GUEST_NAME }}
+      port: {{ HOST_PORT }}
+      delay: {{ ACTION_DELAY }}
