@@ -5,6 +5,6 @@
   tasks:
   - name: Wait for y port to become open on the host, don't start checking for x seconds
     wait_for:
-      host: {{ VCENTER_GUEST_NAME }}
-      port: {{ HOST_PORT }}
-      delay: {{ ACTION_DELAY }}
+      host: "{{ VCENTER_GUEST_NAME }}"
+      port: "{{ HOST_PORT }}"
+      delay: "{{ ACTION_DELAY }}"
