@@ -1,5 +1,4 @@
 ---
-# This playbook uses the win_ping module to test connectivity to Windows hosts
 - name: sleep for 300 seconds and continue with play
   hosts: all 
 
