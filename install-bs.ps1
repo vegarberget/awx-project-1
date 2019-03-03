@@ -22,3 +22,7 @@ msiexec.exe /i “\\pdc\delt\install\BTS_2016_Dev\BizTalk Server\ASDK_x64\Adapte
 msiexec.exe /i “\\pdc\delt\install\BTS_2016_Dev\BizTalk Server\ESBT_x64\BizTalk ESB Toolkit 2.3.msi” /qn
 
 rmdir c:\Images\BTS /S /Q
+
+“C:\Program Files\7-Zip\7z.exe” x C:\Images\485668_ENU_i386_zip.exe -oc:\Images\BTSCU1\ * -r -y
+
+C:\Images\BTSCU1\BizTalk2013R2_CU1-KB3055198-ENU.exe /quiet
