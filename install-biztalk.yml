@@ -24,18 +24,20 @@
   - name: Configure Biztalk
     win_shell: powershell.exe ((Get-Content -path c:\install\Biztalk-Deploy-master\BiztalkConfig\BizTalkConfig1.xml -Raw) -replace 'servernavn',"{{ VCENTER_GUEST_NAME }}") | Set-Content -Path c:\BizTalkConfig1.xml
   - name: Configure Biztalk
-    win_command: “C:\Program Files (x86)\Microsoft BizTalk Server 2016\Configuration.exe” /S c:\BizTalkConfig1.xml
+    win_shell: “C:\Program Files (x86)\Microsoft BizTalk Server 2016\Configuration.exe” /S c:\BizTalkConfig1.xml
+    args:
+      executable: cmd
   - name: Install Scheduled Adapter
     win_command: “c:\install\Biztalk-Deploy-master\bin\ScheduledTaskAdapter v6.0.0\ScheduledTaskAdapter v6.0.0\ScheduledTaskAdapter.msi” /passive
   - name: Configure Biztalk
-    win_command: msiexec.exe /i “c:\install\BTS_2016_Dev\BizTalk Server\LOB\Msi\Microsoft_BizTalk_Adapters_for_Enterprise_Applications.msi” /norestart /qn /lv c:\lob.log
+    win_command: msiexec.exe /i “c:\install\BTS_2016_Dev\BizTalkServer\LOB\Msi\Microsoft_BizTalk_Adapters_for_Enterprise_Applications.msi” /norestart /qn /lv c:\lob.log
   - name: Configure Biztalk
-    win_command: msiexec.exe /i “c:\install\BTS_2016_Dev\BizTalk Server\ASDK_x86\AdapterFramework.msi” /quiet MUOPTIN=”Yes”
+    win_command: msiexec.exe /i “c:\install\BTS_2016_Dev\BizTalkServer\ASDK_x86\AdapterFramework.msi” /quiet MUOPTIN=”Yes”
   - name: Configure Biztalk
-    win_command: msiexec.exe /i “c:\install\BTS_2016_Dev\BizTalk Server\ASDK_x64\AdapterFramework64.msi” /quiet MUOPTIN=”Yes”
+    win_command: msiexec.exe /i “c:\install\BTS_2016_Dev\BizTalkServer\ASDK_x64\AdapterFramework64.msi” /quiet MUOPTIN=”Yes”
   - name: Configure Biztalk
-    win_command: msiexec.exe /i “c:\install\BTS_2016_Dev\BizTalk Server\ASDK_x86\AdaptersSetup.msi” /qn
+    win_command: msiexec.exe /i “c:\install\BTS_2016_Dev\BizTalkServer\ASDK_x86\AdaptersSetup.msi” /qn
   - name: Configure Biztalk
-    win_command: msiexec.exe /i “c:\install\BTS_2016_Dev\BizTalk Server\ASDK_x64\AdaptersSetup64.msi” /qn
+    win_command: msiexec.exe /i “c:\install\BTS_2016_Dev\BizTalkServer\ASDK_x64\AdaptersSetup64.msi” /qn
   - name: Configure Biztalk
-    win_command: msiexec.exe /i “c:\install\BTS_2016_Dev\BizTalk Server\ESBT_x64\BizTalk ESB Toolkit 2.3.msi” /qn
+    win_command: msiexec.exe /i “c:\install\BTS_2016_Dev\BizTalkServer\ESBT_x64\BizTalk ESB Toolkit 2.3.msi” /qn
