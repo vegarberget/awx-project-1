@@ -5,5 +5,5 @@
   tasks:
   - name: Install MSSQL
     win_chocolatey:
-      name: sql-server-2016-developer-edition
+      name: sql-server-2017
       state: present
