@@ -12,7 +12,7 @@
   - name: Install .Net 2.0
     win_shell: powershell.exe Install-WindowsFeature Net-Framework-Core -source c:\install\Biztalk-Deploy-master\bin\sxs\sxs
   - name: Install vcredist x64
-    win_shell: '“c:\install\Biztalk-Deploy-master\bin\VCRedist\x64\vcredist.exe” //install //passive'
+    win_command: c:\install\Biztalk-Deploy-master\bin\VCRedist\x64\vcredist.exe /install /passive
   - name: Install vcresist x86
     win_shell: '“c:\install\Biztalk-Deploy-master\bin\VCRedist\x86\vcredist.exe” /install /passive'
   - name: Install Entsso
