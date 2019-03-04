@@ -7,7 +7,7 @@
     win_mapped_drive:
       letter: M
       path: \\pdc\delt\install
-      username: lab\administrator
+      username: LAB\administrator
       password: Password123!
 
   - name: Install .Net 2.0
