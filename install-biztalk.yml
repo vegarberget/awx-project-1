@@ -13,9 +13,9 @@
   - name: Install .Net 2.0
     win_shell: powershell.exe Install-WindowsFeature Net-Framework-Core -source M:\Biztalk-Deploy-master\bin\sxs\sxs
   - name: Install vcredist x64
-    win_shell: “M:\Biztalk-Deploy-master\bin\VCRedist\x64\vcredist.exe” /install /passive
+    win_shell: “M:\Biztalk-Deploy-master\bin\VCRedist\x64\vcredist.exe /install /passive”
   - name: Install vcresist x86
-    win_shell: “M:\Biztalk-Deploy-master\bin\VCRedist\x86\vcredist.exe” /install /passive
+    win_shell: “M:\Biztalk-Deploy-master\bin\VCRedist\x86\vcredist.exe /install /passive”
   - name: Install Entsso
     win_shell: “M:\BTS_2016_Dev\BizTalk Server\setup.exe” /PASSIVE /NORESTART /CABPATH M:\Biztalk-Deploy-master\bin\BtsRedistW2K12R2EN64\BtsRedistW2K12R2EN64.cab /ADDLOCAL SSOAdmin,SSOSERVER
   - name: Install Biztalk features
