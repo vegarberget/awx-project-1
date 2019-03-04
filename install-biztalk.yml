@@ -20,7 +20,7 @@
   - name: Configure Biztalk
     win_shell: “C:\Program Files (x86)\Microsoft BizTalk Server 2016\Configuration.exe” /S c:\BizTalkConfig1.xml
   - name: Install Scheduled Adapter
-    win_shell: "\\pdc\delt\install\Biztalk-Deploy-master\bin\ScheduledTaskAdapter v6.0.0\ScheduledTaskAdapter v6.0.0\ScheduledTaskAdapter.msi" /passive
+    win_shell: “\\pdc\delt\install\Biztalk-Deploy-master\bin\ScheduledTaskAdapter v6.0.0\ScheduledTaskAdapter v6.0.0\ScheduledTaskAdapter.msi” /passive
   - name: Configure Biztalk
     win_shell: msiexec.exe /i “\\pdc\delt\install\BTS_2016_Dev\BizTalk Server\LOB\Msi\Microsoft_BizTalk_Adapters_for_Enterprise_Applications.msi” /norestart /qn /lv c:\lob.log
   - name: Configure Biztalk
