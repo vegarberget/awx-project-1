@@ -16,15 +16,15 @@
   - name: Install vcresist x86
     win_command: c:\install\Biztalk-Deploy-master\bin\VCRedist\x86\vcredist.exe /install /passive
   - name: Install Entsso
-    win_command: powershell.exe 'c:\install\BTS_2016_Dev\BizTalk Server\setup.exe' /PASSIVE /NORESTART /CABPATH c:\install\Biztalk-Deploy-master\bin\BtsRedistW2K12R2EN64\BtsRedistW2K12R2EN64.cab /ADDLOCAL SSOAdmin,SSOSERVER
+    win_command: c:\install\BTS_2016_Dev\BizTalkServer\setup.exe /PASSIVE /NORESTART /CABPATH c:\install\Biztalk-Deploy-master\bin\BtsRedistW2K12R2EN64\BtsRedistW2K12R2EN64.cab /ADDLOCAL SSOAdmin,SSOSERVER
   - name: Install Biztalk features
-    win_command: c:\install\BTS_2016_Dev\BizTalk Server\setup.exe /PASSIVE /NORESTART /CABPATH c:\install\Biztalk-Deploy-master\bin\BtsRedistW2K12R2EN64\BtsRedistW2K12R2EN64.cab /ADDLOCAL BizTalk,WMI,AdminAndMonitoring,AdminTools,BAMTools,BizTalkAdminSnapIn,HealthActivityClient,MonitoringAndTracking,PAM,Documentation,BizTalk,WMI,Engine,MOT,MSMQ,Runtime
+    win_command: c:\install\BTS_2016_Dev\BizTalkServer\setup.exe /PASSIVE /NORESTART /CABPATH c:\install\Biztalk-Deploy-master\bin\BtsRedistW2K12R2EN64\BtsRedistW2K12R2EN64.cab /ADDLOCAL BizTalk,WMI,AdminAndMonitoring,AdminTools,BAMTools,BizTalkAdminSnapIn,HealthActivityClient,MonitoringAndTracking,PAM,Documentation,BizTalk,WMI,Engine,MOT,MSMQ,Runtime
   - name: Install Biztalk development
-    win_command: c:\install\BTS_2016_Dev\BizTalk Server\setup.exe /PASSIVE /NORESTART /CABPATH c:\install\Biztalk-Deploy-master\bin\BtsRedistW2K12R2EN64\BtsRedistW2K12R2EN64.cab /ADDLOCAL BizTalk,WMI,AdapterImportWizard,BizTalkExplorer,BizTalkExtensions,DeploymentWizard,Designer,Development,Migration,MsEDIMigration,MsEDISchemaExtension,MsEDISDK,OrchestrationDesigner,PipelineDesigner,SDK,TrackingProfileEditor,VSTools,WCFDevTools,XMLTools
+    win_command: c:\install\BTS_2016_Dev\BizTalkServer\setup.exe /PASSIVE /NORESTART /CABPATH c:\install\Biztalk-Deploy-master\bin\BtsRedistW2K12R2EN64\BtsRedistW2K12R2EN64.cab /ADDLOCAL BizTalk,WMI,AdapterImportWizard,BizTalkExplorer,BizTalkExtensions,DeploymentWizard,Designer,Development,Migration,MsEDIMigration,MsEDISchemaExtension,MsEDISDK,OrchestrationDesigner,PipelineDesigner,SDK,TrackingProfileEditor,VSTools,WCFDevTools,XMLTools
   - name: Configure Biztalk
     win_shell: powershell.exe ((Get-Content -path c:\install\Biztalk-Deploy-master\BiztalkConfig\BizTalkConfig1.xml -Raw) -replace 'servernavn',"{{ VCENTER_GUEST_NAME }}") | Set-Content -Path c:\BizTalkConfig1.xml
   - name: Configure Biztalk
-    win_command: C:\Program Files (x86)\Microsoft BizTalk Server 2016\Configuration.exe /S c:\BizTalkConfig1.xml
+    win_command: “C:\Program Files (x86)\Microsoft BizTalk Server 2016\Configuration.exe” /S c:\BizTalkConfig1.xml
   - name: Install Scheduled Adapter
     win_command: “c:\install\Biztalk-Deploy-master\bin\ScheduledTaskAdapter v6.0.0\ScheduledTaskAdapter v6.0.0\ScheduledTaskAdapter.msi” /passive
   - name: Configure Biztalk
