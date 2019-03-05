@@ -4,7 +4,7 @@
 
   tasks:
   - name: Install vcredist x64
-    win_command: net use m: \\pdc\delt\install
+    win_command: 'net use m: \\pdc\delt\install'
 #      username: LAB\administrator
 #      password: Password123!
   - name: Install .Net 2.0
