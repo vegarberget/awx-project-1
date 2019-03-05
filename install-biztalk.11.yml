@@ -6,4 +6,4 @@
   - name: Configure Biztalk
     win_package:
       path: \\pdc\delt\install\BTS_2016_Dev\BizTalkServer\ASDK_x64\AdapterFramework64.msi
-      arguments: /i /quiet MUOPTIN=”Yes”
+      arguments: /passive /quiet /qn

@@ -6,4 +6,4 @@
   - name: Configure Biztalk
     win_package:
       path: \\pdc\delt\install\BTS_2016_Dev\BizTalkServer\LOB\Msi\Microsoft_BizTalk_Adapters_for_Enterprise_Applications.msi
-      arguments: /passive /i /norestart /qn /lv
+      arguments: /passive /quiet /qn
