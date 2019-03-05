@@ -5,8 +5,8 @@
   tasks:
   - name: this option is available since 2.4 and it runs the process as the user specified
     win_copy:
-      src: \\pdc.lab.local\delt\install
-      dest: C:\install
+      src: '\\pdc.lab.local\delt\install'
+      dest: 'C:\install'
     become: yes
     become_method: runas
     vars: 
