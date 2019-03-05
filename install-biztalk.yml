@@ -4,7 +4,7 @@
 
   tasks:
   - name: map netverksdrev
-    win_command: 'net use 'm:' '\\pdc\delt\install' /user:'LAB\administrator''Password123!'
+    win_command: net use 'm:' '\\pdc\delt\install' /user:'LAB\administrator''Password123!'
 #      username: LAB\administrator
 #      password: Password123!
   - name: Install .Net 2.0
