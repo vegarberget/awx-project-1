@@ -1,0 +1,14 @@
+---
+- name: Install Windows Updates
+  hosts: "{{ VCENTER_TEMPLATE_NAME }}.lab.local"
+
+  tasks:
+  - name: Windows Update
+    win_updates:
+      category_names:
+      - Application
+      - CriticalUpdates
+      - DefinitionUpdates
+      - SecurityUpdates
+      - Updates
+      reboot: yes  

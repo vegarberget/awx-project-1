@@ -1,0 +1,16 @@
+---
+- name: Create a VM from a template
+  hosts: localhost
+  gather_facts: no
+  tasks:
+  - name: Endre Template til VM
+    vmware_guest:
+      validate_certs: False
+      name: "{{ VCENTER_TEMPLATE }}"
+#      template: "{{ VCENTER_TEMPLATE }}"
+#      datacenter: "{{ VCENTER_DATACENTER }}"
+#      datastore: "{{ VCENTER_DATASTORE }}"
+#      folder: "{{ VCENTER_FOLDER }}"
+#      cluster: "{{ VCENTER_CLUSTER }}"
+      is_template: yes
+      state: poweredoff
