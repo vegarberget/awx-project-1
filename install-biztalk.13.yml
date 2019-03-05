@@ -1,0 +1,7 @@
+---
+- name: Install Biztalk 2016
+  hosts: "{{ VCENTER_GUEST_NAME }}.lab.local"
+
+  tasks:
+  - name: Configure Biztalk
+    win_command: msiexec.exe /i “\\pdc\delt\install\BTS_2016_Dev\BizTalkServer\ASDK_x64\AdaptersSetup64.msi” /qn

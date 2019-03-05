@@ -1,46 +1,7 @@
 ---
 - name: Install Biztalk 2016
   hosts: "{{ VCENTER_GUEST_NAME }}.lab.local"
-
+    
   tasks:
-  #- name: this option is available since 2.4 and it runs the process as the user specified
-  #  win_copy:
-  #    src: \\pdc.lab.local\delt\install
-  #    dest: 'C:\install'
-  #  become: yes
-  #  become_method: runas
-  #  vars: 
-  #    ansible_become_user: LAB\administrator
-  #    ansible_become_pass: Password123!
   - name: Install .Net 2.0
     win_shell: powershell.exe Install-WindowsFeature Net-Framework-Core -source \\pdc\delt\install\Biztalk-Deploy-master\bin\sxs\sxs
-  - name: Install vcredist x64
-    win_command: \\pdc\delt\install\Biztalk-Deploy-master\bin\VCRedist\x64\vcredist.exe /install /passive
-  - name: Install vcresist x86
-    win_command: \\pdc\delt\install\Biztalk-Deploy-master\bin\VCRedist\x86\vcredist.exe /install /passive
-  - name: Install Entsso
-    win_command: \\pdc\delt\install\BTS_2016_Dev\BizTalkServer\setup.exe /PASSIVE /NORESTART /CABPATH \pdc\delt\install\Biztalk-Deploy-master\bin\BtsRedistW2K12R2EN64\BtsRedistW2K12R2EN64.cab /ADDLOCAL SSOAdmin,SSOSERVER
-  - name: Install Biztalk features
-    win_command: \\pdc\delt\install\BTS_2016_Dev\BizTalkServer\setup.exe /PASSIVE /NORESTART /CABPATH \\pdc\delt\install\Biztalk-Deploy-master\bin\BtsRedistW2K12R2EN64\BtsRedistW2K12R2EN64.cab /ADDLOCAL BizTalk,WMI,AdminAndMonitoring,AdminTools,BAMTools,BizTalkAdminSnapIn,HealthActivityClient,MonitoringAndTracking,PAM,Documentation,BizTalk,WMI,Engine,MOT,MSMQ,Runtime
-  - name: Install Biztalk development
-    win_command: \\pdc\delt\install\BTS_2016_Dev\BizTalkServer\setup.exe /PASSIVE /NORESTART /CABPATH \\pdc\delt\install\Biztalk-Deploy-master\bin\BtsRedistW2K12R2EN64\BtsRedistW2K12R2EN64.cab /ADDLOCAL BizTalk,WMI,AdapterImportWizard,BizTalkExplorer,BizTalkExtensions,DeploymentWizard,Designer,Development,Migration,MsEDIMigration,MsEDISchemaExtension,MsEDISDK,OrchestrationDesigner,PipelineDesigner,SDK,TrackingProfileEditor,VSTools,WCFDevTools,XMLTools
-  - name: Configure Biztalk
-    win_shell: powershell.exe ((Get-Content -path \\pdc\delt\install\Biztalk-Deploy-master\BiztalkConfig\BizTalkConfig1.xml -Raw) -replace 'servernavn',"{{ VCENTER_GUEST_NAME }}") | Set-Content -Path \\pdc\delt\BizTalkConfig1.xml
-  - name: Configure Biztalk
-    win_shell: “\\pdc\delt\Program Files (x86)\Microsoft BizTalk Server 2016\Configuration.exe” /S \\pdc\delt\BizTalkConfig1.xml
-    args:
-      executable: cmd
-  - name: Install Scheduled Adapter
-    win_command: “\\pdc\delt\install\Biztalk-Deploy-master\bin\ScheduledTaskAdapter v6.0.0\ScheduledTaskAdapter v6.0.0\ScheduledTaskAdapter.msi” /passive
-  - name: Configure Biztalk
-    win_command: msiexec.exe /i “\\pdc\delt\install\BTS_2016_Dev\BizTalkServer\LOB\Msi\Microsoft_BizTalk_Adapters_for_Enterprise_Applications.msi” /norestart /qn /lv \\pdc\delt\lob.log
-  - name: Configure Biztalk
-    win_command: msiexec.exe /i “\\pdc\delt\install\BTS_2016_Dev\BizTalkServer\ASDK_x86\AdapterFramework.msi” /quiet MUOPTIN=”Yes”
-  - name: Configure Biztalk
-    win_command: msiexec.exe /i “\\pdc\delt\install\BTS_2016_Dev\BizTalkServer\ASDK_x64\AdapterFramework64.msi” /quiet MUOPTIN=”Yes”
-  - name: Configure Biztalk
-    win_command: msiexec.exe /i “\\pdc\delt\install\BTS_2016_Dev\BizTalkServer\ASDK_x86\AdaptersSetup.msi” /qn
-  - name: Configure Biztalk
-    win_command: msiexec.exe /i “\\pdc\delt\install\BTS_2016_Dev\BizTalkServer\ASDK_x64\AdaptersSetup64.msi” /qn
-  - name: Configure Biztalk
-    win_command: msiexec.exe /i “\\pdc\delt\install\BTS_2016_Dev\BizTalkServer\ESBT_x64\BizTalk ESB Toolkit 2.3.msi” /qn
