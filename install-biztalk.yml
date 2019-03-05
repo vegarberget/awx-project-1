@@ -8,11 +8,9 @@
 #      username: LAB\administrator
 #      password: Password123!
   - name: Install .Net 2.0
-    win_shell: powershell.exe Install-WindowsFeature Net-Framework-Core -source m:\Biztalk-Deploy-master\bin\sxs\sxs
+    win_shell: 'powershell.exe Install-WindowsFeature Net-Framework-Core -source m:\Biztalk-Deploy-master\bin\sxs\sxs'
   - name: Install vcredist x64
-    win_command: vcredist.exe /install /passive
-     args:
-       chdir: 'm:\Biztalk-Deploy-master\bin\VCRedist\x64\'
+    win_command: 'm:\Biztalk-Deploy-master\bin\VCRedist\x64\vcredist.exe /install /passive'
   - name: Install vcresist x86
     win_command: m:\Biztalk-Deploy-master\bin\VCRedist\x86\vcredist.exe /install /passive
   - name: Install Entsso
