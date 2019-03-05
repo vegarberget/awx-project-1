@@ -19,11 +19,11 @@
   - name: Install vcresist x86
     win_command: \\pdc\delt\install\Biztalk-Deploy-master\bin\VCRedist\x86\vcredist.exe /install /passive
   - name: Install Entsso
-    win_command: \\pdc\delt\install\BTS_2016_Dev\BizTalkServer\setup.exe /PASSIVE /NORESTART /CABPATH \\pdc\delt\install\Biztalk-Deploy-master\bin\BtsRedistW2K12R2EN64\BtsRedistW2K12R2EN64.cab /ADDLOCAL SSOAdmin,SSOSERVER
+    win_command: '\\pdc\delt\install\BTS_2016_Dev\BizTalk Server\setup.exe' /PASSIVE /NORESTART /CABPATH \\pdc\delt\install\Biztalk-Deploy-master\bin\BtsRedistW2K12R2EN64\BtsRedistW2K12R2EN64.cab /ADDLOCAL SSOAdmin,SSOSERVER
   - name: Install Biztalk features
-    win_command: \\pdc\delt\install\BTS_2016_Dev\BizTalkServer\setup.exe /PASSIVE /NORESTART /CABPATH \\pdc\delt\install\Biztalk-Deploy-master\bin\BtsRedistW2K12R2EN64\BtsRedistW2K12R2EN64.cab /ADDLOCAL BizTalk,WMI,AdminAndMonitoring,AdminTools,BAMTools,BizTalkAdminSnapIn,HealthActivityClient,MonitoringAndTracking,PAM,Documentation,BizTalk,WMI,Engine,MOT,MSMQ,Runtime
+    win_command: '\\pdc\delt\install\BTS_2016_Dev\BizTalk Server\setup.exe' /PASSIVE /NORESTART /CABPATH \\pdc\delt\install\Biztalk-Deploy-master\bin\BtsRedistW2K12R2EN64\BtsRedistW2K12R2EN64.cab /ADDLOCAL BizTalk,WMI,AdminAndMonitoring,AdminTools,BAMTools,BizTalkAdminSnapIn,HealthActivityClient,MonitoringAndTracking,PAM,Documentation,BizTalk,WMI,Engine,MOT,MSMQ,Runtime
   - name: Install Biztalk development
-    win_command: \\pdc\delt\install\BTS_2016_Dev\BizTalkServer\setup.exe /PASSIVE /NORESTART /CABPATH \\pdc\delt\install\Biztalk-Deploy-master\bin\BtsRedistW2K12R2EN64\BtsRedistW2K12R2EN64.cab /ADDLOCAL BizTalk,WMI,AdapterImportWizard,BizTalkExplorer,BizTalkExtensions,DeploymentWizard,Designer,Development,Migration,MsEDIMigration,MsEDISchemaExtension,MsEDISDK,OrchestrationDesigner,PipelineDesigner,SDK,TrackingProfileEditor,VSTools,WCFDevTools,XMLTools
+    win_command: '\\pdc\delt\install\BTS_2016_Dev\BizTalk Server\setup.exe' /PASSIVE /NORESTART /CABPATH \\pdc\delt\install\Biztalk-Deploy-master\bin\BtsRedistW2K12R2EN64\BtsRedistW2K12R2EN64.cab /ADDLOCAL BizTalk,WMI,AdapterImportWizard,BizTalkExplorer,BizTalkExtensions,DeploymentWizard,Designer,Development,Migration,MsEDIMigration,MsEDISchemaExtension,MsEDISDK,OrchestrationDesigner,PipelineDesigner,SDK,TrackingProfileEditor,VSTools,WCFDevTools,XMLTools
   - name: Configure Biztalk
     win_shell: powershell.exe ((Get-Content -path \\pdc\delt\install\Biztalk-Deploy-master\BiztalkConfig\BizTalkConfig1.xml -Raw) -replace 'servernavn',"{{ VCENTER_GUEST_NAME }}") | Set-Content -Path \\pdc\delt\BizTalkConfig1.xml
   - name: Configure Biztalk
