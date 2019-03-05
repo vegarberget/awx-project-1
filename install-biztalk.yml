@@ -3,8 +3,8 @@
   hosts: "{{ VCENTER_GUEST_NAME }}.lab.local"
 
   tasks:
-  - name: map netverksdrev
-    win_command: net use 'm:' '\\pdc.lab.local\delt\install' '/user:LAB\administrator' 'Password123!'
+#  - name: map netverksdrev
+#    win_command: net use 'm: "\\pdc.lab.local\delt\install" /user:"LAB\administrator" "Password123!"'
 #      username: LAB\administrator
 #      password: Password123!
   - name: Install .Net 2.0
