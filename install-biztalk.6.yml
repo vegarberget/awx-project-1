@@ -4,4 +4,4 @@
 
   tasks:
   - name: Configure Biztalk
-    win_shell: '((Get-Content -path \\pdc\delt\install\Biztalk-Deploy-master\BiztalkConfig\BizTalkConfig1.xml -Raw) -replace servernavn,{{ VCENTER_GUEST_NAME }}) | Set-Content -Path \\pdc\delt\BizTalkConfig1.xml'
+    win_shell: ((Get-Content -path \\pdc\delt\install\Biztalk-Deploy-master\BiztalkConfig\BizTalkConfig1.xml -Raw) -replace 'servernavn',{{ VCENTER_GUEST_NAME }}) | Set-Content -Path \\pdc\delt\BizTalkConfig1.xml
