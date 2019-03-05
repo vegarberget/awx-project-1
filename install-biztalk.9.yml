@@ -4,4 +4,6 @@
 
   tasks:
   - name: Configure Biztalk
-    win_command: msiexec.exe /i “\\pdc\delt\install\BTS_2016_Dev\BizTalkServer\LOB\Msi\Microsoft_BizTalk_Adapters_for_Enterprise_Applications.msi” /norestart /qn /lv \\pdc\delt\lob.log
+    win_package:
+      path: \\pdc\delt\install\BTS_2016_Dev\BizTalkServer\LOB\Msi\Microsoft_BizTalk_Adapters_for_Enterprise_Applications.msi
+      arguments: /passive /i /norestart /qn /lv

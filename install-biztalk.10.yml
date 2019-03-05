@@ -4,4 +4,6 @@
 
   tasks:
   - name: Configure Biztalk
-    win_command: msiexec.exe /i “\\pdc\delt\install\BTS_2016_Dev\BizTalkServer\ASDK_x86\AdapterFramework.msi” /quiet MUOPTIN=”Yes”
+    win_package:
+      path: \\pdc\delt\install\BTS_2016_Dev\BizTalkServer\ASDK_x86\AdapterFramework.msi
+      arguments: /i /quiet MUOPTIN=”Yes”
