@@ -4,4 +4,6 @@
 
   tasks:
   - name: Install Scheduled Adapter
-    win_command: \\pdc\delt\install\Biztalk-Deploy-master\bin\ScheduledTaskAdapter.msi /passive
+    win_package:
+      path: \\pdc\delt\install\Biztalk-Deploy-master\bin\ScheduledTaskAdapter.msi
+      arguments: /passive
