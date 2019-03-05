@@ -4,4 +4,4 @@
 
   tasks:
   - name: Configure Biztalk
-    win_command: c:\Program Files (x86)\Microsoft BizTalk Server 2016\Configuration.exe /S \\pdc\delt\BizTalkConfig1.xml
+    win_command: '"c:\Program Files (x86)\Microsoft BizTalk Server 2016\Configuration.exe" /S \\pdc\delt\BizTalkConfig1.xml'
