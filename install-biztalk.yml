@@ -7,10 +7,11 @@
     win_copy:
       src: \\pdc.lab.local\delt\install
       dest: C:\install
-    become: yes
-    become_method: runas
-#      username: LAB\administrator
-#      password: Password123!
+ #   become: yes
+ #   become_method: runas
+ #   vars: 
+ #      ansible_become_user: LAB\administrator
+ #      ansible_become_pass: Password123!
   - name: Install .Net 2.0
     win_shell: powershell.exe Install-WindowsFeature Net-Framework-Core -source C:\install\Biztalk-Deploy-master\bin\sxs\sxs
   - name: Install vcredist x64
