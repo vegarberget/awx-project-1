@@ -5,5 +5,5 @@
   tasks:
   - name: Configure Biztalk
     win_package:
-      path: '\\pdc\delt\install\BTS_2016_Dev\BizTalkServer\ESBT_x64\BizTalk ESB Toolkit 2.3.msi'
+      path: '\\pdc\delt\install\BTS_2016_Dev\BizTalkServer\ESBT_x64\BizTalk ESB Toolkit 2.4.msi'
       arguments: /passive /quiet /qn
