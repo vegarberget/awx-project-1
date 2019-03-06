@@ -5,5 +5,5 @@
   tasks:
   - name: Configure Biztalk
     win_package:
-      path: \\pdc\delt\install\BTS_2016_Dev\BizTalkServer\ASDK_x64\AdaptersSetup64.msi
+      path: \\pdc\delt\install\BTS_2016_Dev\BizTalkServer\ASDK_x64\AdapterFramework64.msi
       arguments: /passive /quiet /qn
