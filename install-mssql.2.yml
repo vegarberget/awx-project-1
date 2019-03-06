@@ -1,0 +1,9 @@
+---
+- name: Install MSSQL
+  hosts: "{{ VCENTER_GUEST_NAME_2 }}.lab.local"
+
+  tasks:
+  - name: Install MSSQL
+    win_chocolatey:
+      name: sql-server-2017
+      state: present
