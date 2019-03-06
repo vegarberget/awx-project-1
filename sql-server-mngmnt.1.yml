@@ -1,0 +1,9 @@
+---
+- name: Install sql-server-management-studio
+  hosts: "{{ VCENTER_GUEST_NAME }}.lab.local"
+
+  tasks:
+  - name: Install MSSQL
+    win_chocolatey:
+      name: sql-server-management-studio
+      state: present
