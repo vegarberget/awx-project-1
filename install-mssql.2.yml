@@ -4,6 +4,6 @@
 
   tasks:
   - name: Install MSSQL
-    win_command: \\pdc\delt\install\SQL_2016_sp2_dev\Setup.exe /ConfigurationFile='\\pdc\delt\ConfigurationFile.ini'
+    win_command: \\pdc\delt\install\SQL_2016_sp2_dev\Setup.exe /ConfigurationFile=\\pdc\delt\ConfigurationFile.ini
   - name: åpne brannmurport
     win_shell: New-NetFirewallRule -DisplayName "MSSQL ENGINE TCP" -Direction Inbound -LocalPort 1433 -Protocol TCP -Action Allow
