@@ -1,0 +1,13 @@
+---
+- name: Install MSSQL
+  hosts: "{{ VCENTER_GUEST_NAME_2 }}.lab.local"
+
+  tasks:
+  - name: Powershell | Install Required Powershell Modules
+    win_psmodule: name={{ item }} state=present
+    with_items:
+      - SQLServerDsc
+      - StorageDsc
+      - ServerManager
+      - dbatools
+      - xNetworking
