@@ -9,15 +9,15 @@
     win_shell: New-NetFirewallRule -DisplayName "Allow MSDTC" -Direction Inbound -Action Allow -Protocol TCP -LocalPort 135,5000-65535 | Out-Null
   - name: Open ports for MSDTC
     win_shell: New-NetFirewallRule -DisplayName "Allow MSDTC" -Direction Outbound -Action Allow -Protocol TCP -LocalPort 135,5000-65535 | Out-Null
-  - name: Configure MSDTC
+  - name: Open ports for SQL
     win_shell: New-NetFirewallRule -DisplayName "Allow SQL" -Direction Inbound -Action Allow -Protocol TCP -LocalPort 1433-1434 | Out-Null
-  - name: Configure MSDTC
+  - name: Open ports for SQL
     win_shell: New-NetFirewallRule -DisplayName "Allow SQL" -Direction Outbound -Action Allow -Protocol TCP -LocalPort 1433-1434 | Out-Null
-  - name: Configure MSDTC
+  - name: Open ports for RPC
     win_shell: Enable-NetFirewallRule -DisplayName "Distributed Transaction Coordinator (RPC)" | Out-Null
-  - name: Configure MSDTC
+  - name: Open ports for RPC
     win_shell: Enable-NetFirewallRule -DisplayName "Distributed Transaction Coordinator (RPC-EPMAP)" | Out-Null
-  - name: Configure MSDTC
+  - name: Open ports for RPC
     win_shell: Enable-NetFirewallRule -DisplayName "Distributed Transaction Coordinator (TCP-In)" | Out-Null
-  - name: Configure MSDTC
+  - name: Open ports for RPC
     win_shell: Enable-NetFirewallRule -DisplayName "Distributed Transaction Coordinator (TCP-Out)" | Out-Null
