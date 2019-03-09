@@ -16,4 +16,10 @@
   - name: Configure Biztalk
     win_shell: ((Get-Content -path \\pdc\delt\BizTalkConfig_esso.xml -Raw) -replace 'ENTSSO_BACKUP_SECRET_FIL_STI','{{ VCENTER_ENTSSO_BACKUP_SECRET_FILE }}') | Set-Content -Path \\pdc\delt\BizTalkConfig_esso.xml
   - name: Configure Biztalk
+    win_shell: ((Get-Content -path \\pdc\delt\BizTalkConfig_esso.xml -Raw) -replace 'GROUP_SSO_ADMINISTRATORS','{{ VCENTER_GROUP_SSO_ADMINISTRATORS }}') | Set-Content -Path \\pdc\delt\BizTalkConfig_esso.xml
+  - name: Configure Biztalk
+    win_shell: ((Get-Content -path \\pdc\delt\BizTalkConfig_esso.xml -Raw) -replace 'GROUP_SSO_AFFILIATE_ADMINISTRATORS','{{ VCENTER_GROUP_SSO_AFFILIATE_ADMINISTRATORS }}') | Set-Content -Path \\pdc\delt\BizTalkConfig_esso.xml  
+  - name: Configure Biztalk
     win_shell: ((Get-Content -path \\pdc\delt\install\Biztalk-Deploy-master\BiztalkConfig\BizTalkConfig_biz.xml -Raw) -replace 'servernavn','{{ VCENTER_GUEST_NAME_2 }}') | Set-Content -Path \\pdc\delt\BizTalkConfig_biz.xml
+  - name: Configure Biztalk
+    win_shell: ((Get-Content -path \\pdc\delt\BizTalkConfig_biz.xml -Raw) -replace 'servernavn','{{ VCENTER_GUEST_NAME_2 }}') | Set-Content -Path \\pdc\delt\BizTalkConfig_biz.xml
