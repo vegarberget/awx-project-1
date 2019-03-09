@@ -4,4 +4,4 @@
 
   tasks:
   - name: Install Entsso
-    win_command: \\pdc\delt\install\BTS_2016_Dev\BizTalkServer\setup.exe /PASSIVE /NORESTART /CABPATH \pdc\delt\install\Biztalk-Deploy-master\bin\BtsRedistW2K12R2EN64\BtsRedistW2K12R2EN64.cab /ADDLOCAL SSOAdmin,SSOSERVER 
+    win_command: \\pdc\delt\install\BTS_2016_Dev\BizTalkServer\setup.exe /PASSIVE /NORESTART /CABPATH \\pdc\delt\install\Biztalk-Deploy-master\bin\BtsRedistW2K12R2EN64\BtsRedistW2K12R2EN64.cab /ADDLOCAL SSOAdmin,SSOSERVER 
