@@ -14,6 +14,6 @@
   - name: Configure Biztalk
     win_shell: ((Get-Content -path \\pdc\delt\BizTalkConfig_esso.xml -Raw) -replace 'ENTSSO_PASSORD','{{ VCENTER_ENTSSO_PASSORD }}') | Set-Content -Path \\pdc\delt\BizTalkConfig_esso.xml
   - name: Configure Biztalk
-    win_shell: ((Get-Content -path \\pdc\delt\BizTalkConfig_esso.xml -Raw) -replace '"C:\Program Files\Common Files\Enterprise Single Sign-On\SSO7C1F.bak"','{{ VCENTER_ENTSSO_BACKUP_SECRET_FILE }}') | Set-Content -Path \\pdc\delt\BizTalkConfig_esso.xml
+    win_shell: ((Get-Content -path \\pdc\delt\BizTalkConfig_esso.xml -Raw) -replace 'ENTSSO_BACKUP_SECRET_FIL_STI','{{ VCENTER_ENTSSO_BACKUP_SECRET_FILE }}') | Set-Content -Path \\pdc\delt\BizTalkConfig_esso.xml
   - name: Configure Biztalk
     win_shell: ((Get-Content -path \\pdc\delt\install\Biztalk-Deploy-master\BiztalkConfig\BizTalkConfig_biz.xml -Raw) -replace 'servernavn','{{ VCENTER_GUEST_NAME_2 }}') | Set-Content -Path \\pdc\delt\BizTalkConfig_biz.xml
