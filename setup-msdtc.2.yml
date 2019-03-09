@@ -1,0 +1,7 @@
+---
+- name: COnfigure MSDTC
+  hosts: "{{ VCENTER_GUEST_NAME_2 }}.lab.local"
+
+  tasks:
+  - name: Configure MSDTC
+    win_shell: Set-DtcNetworkSetting –DtcName Local –AuthenticationLevel Mutual –InboundTransactionsEnabled 1 –OutboundTransactionsEnabled 1 –RemoteClientAccessEnabled 1 –confirm:$false
