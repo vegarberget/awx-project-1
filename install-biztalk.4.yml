@@ -5,4 +5,4 @@
   tasks:
   - name: Install Biztalk features
     win_command: \\pdc\delt\install\BTS_2016_Dev\BizTalkServer\setup.exe /PASSIVE /NORESTART /CABPATH \\pdc\delt\install\Biztalk-Deploy-master\bin\BtsRedistW2K12R2EN64\BtsRedistW2K12R2EN64.cab /ADDLOCAL BizTalk,WMI,AdminAndMonitoring,AdminTools,BAMTools,BizTalkAdminSnapIn,HealthActivityClient,MonitoringAndTracking,PAM,Documentation,BizTalk,WMI,Engine,MOT,MSMQ,Runtime
-    ignore_errors: yes 
+#    ignore_errors: yes 
