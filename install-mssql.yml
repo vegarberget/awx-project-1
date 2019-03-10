@@ -1,9 +1,13 @@
 ---
 - name: Install MSSQL
-  hosts: "{{ VCENTER_GUEST_NAME }}.lab.local"
+  hosts: "{{ VCENTER_GUEST_NAME_2 }}.lab.local"
 
   tasks:
+  - name: Lager konfigurasjon for  MSSQL
+    win_shell: ((Get-Content -path \\pdc\delt\install\Biztalk-Deploy-master\SqlConfig\ConfigurationFile.ini -Raw) -replace 'SQL_SERVER_USER_ACCOUNT','{{ VCENTER_SQL_SERVER_USER_ACCOUNT }}') | Set-Content -Path \\pdc\delt\ConfigurationFile.ini
+  - name: Lager konfigurasjon for  MSSQL
+    win_shell: ((Get-Content -path \\pdc\delt\ConfigurationFile.ini -Raw) -replace 'SQL_SERVER_PASSWORD','{{ VCENTER_SQL_SERVER_PASSWORD }}') | Set-Content -Path \\pdc\delt\ConfigurationFile.ini
   - name: Install MSSQL
-    win_chocolatey:
-      name: sql-server-2017
-      state: present
+    win_command: \\pdc\delt\install\SQL_2016_sp2_dev\Setup.exe /ConfigurationFile=\\pdc\delt\ConfigurationFile.ini
+  - name: åpne brannmurport
+    win_shell: New-NetFirewallRule -DisplayName "MSSQL ENGINE TCP" -Direction Inbound -LocalPort 1433 -Protocol TCP -Action Allow
