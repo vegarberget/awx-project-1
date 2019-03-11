@@ -23,3 +23,6 @@
         not: important
       customization_spec: "{{ VCENTER_GUEST_DOMAIN }}"
       state: poweredon
+  - name: Wait for system to become reachable over WinRM
+    wait_for_connection:
+      timeout: 900
