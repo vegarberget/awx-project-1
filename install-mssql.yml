@@ -3,6 +3,8 @@
   hosts: "{{ VCENTER_GUEST_NAME_2 }}.lab.local"
 
   tasks:
+  - name: Install Biztalk pre. features
+    win_shell: Install-WindowsFeature -name FS-FileServer,Storage-Services,Web-Default-Doc,Web-Dir-Browsing,Web-Http-Errors,Web-Static-Content,Web-Http-Logging,Web-Log-Libraries,Web-ODBC-Logging,Web-Request-Monitor,Web-Http-Tracing,Web-Stat-Compression,Web-Dyn-Compression,Web-Filtering,Web-Basic-Auth,Web-Digest-Auth,Web-Windows-Auth,Web-App-Dev,Web-Mgmt-Tools,NET-Framework-45-Core,NET-Framework-45-ASPNET,NET-WCF-HTTP-Activation45,NET-WCF-TCP-PortSharing45,RDC,RSAT-AD-PowerShell,RSAT-AD-AdminCenter,RSAT-ADDS-Tools,RSAT-ADLDS,FS-SMB1,PowerShell,PowerShell-V2,PowerShell-ISE,WAS-Process-Model,WAS-Config-APIs,WoW64-Support -IncludeAllSubFeature
   - name: Lager konfigurasjon for  MSSQL
     win_shell: ((Get-Content -path \\pdc\delt\install\Biztalk-Deploy-master\SqlConfig\ConfigurationFile.ini -Raw) -replace 'SQL_SERVER_USER_ACCOUNT','{{ VCENTER_SQL_SERVER_USER_ACCOUNT }}') | Set-Content -Path \\pdc\delt\ConfigurationFile.ini
   - name: Lager konfigurasjon for  MSSQL
