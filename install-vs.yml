@@ -4,4 +4,5 @@
 
   tasks:
   - name: Install Biztalk pre. features
-    win_shell: \\pdc\delt\install\vs2015.3.com_enu\vs_community.exe /Q /L C:\Windows\Temp\vslog.txt /Full
+    win_shell: \\pdc\delt\install\vs2015.3.com_enu\vs_community.exe /Q /L C:\Windows\Temp\
+    vslog.txt /Full
