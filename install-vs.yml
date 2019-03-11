@@ -1,5 +1,5 @@
 ---
-- name: Install MSSQL
+- name: Install VS
   hosts: "{{ VCENTER_GUEST_NAME_2 }}.lab.local"
 
   tasks:
