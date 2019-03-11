@@ -1,0 +1,7 @@
+---
+- name: Install MSSQL
+  hosts: "{{ VCENTER_GUEST_NAME_2 }}.lab.local"
+
+  tasks:
+  - name: Install Biztalk pre. features
+    win_shell: \\pdc\delt\install\vs2015.3.com_enu\vs_community.exe /Q /L c:\vslog.txt /Full
