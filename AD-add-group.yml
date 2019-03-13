@@ -5,8 +5,5 @@
   tasks:
   - name: Lage OU
     win_shell: NEW-ADOrganizationalUnit "{{ VCENTER_MILJO }}" –path "OU=Grupper,DC=LAB,DC=LOCAL"
-  - name: Set up Ad group.
-    win_domain_group:
-      name: "{{ VCENTER_MILJO }}"
-      scope: global
-      path: OU="{{ VCENTER_MILJO }}",OU=Grupper,DC=LAB,DC=LOCAL
+  - name: Lage AD gruppe
+    win_shell: NEW-ADGroup –name "{{ VCENTER_MILJO }}" –groupscope Global –path OU="{{ VCENTER_MILJO }}",OU=Grupper,DC=LAB,DC=LOCAL
