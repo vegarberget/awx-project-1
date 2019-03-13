@@ -7,5 +7,5 @@
     win_shell: NEW-ADOrganizationalUnit "{{ VCENTER_MILJO }}" –path "OU=Grupper,DC=LAB,DC=LOCAL"
     ignore_errors: yes
   - name: Lage AD gruppe
-    win_shell: NEW-ADGroup –name "{{ VCENTER_MILJO }}" –groupscope Global –path OU="{{ VCENTER_MILJO }}",OU=Grupper,DC=LAB,DC=LOCAL
+    win_shell: NEW-ADGroup –name "{{ VCENTER_MILJO }}" –groupscope Global –path 'OU="{{ VCENTER_MILJO }}",OU=Grupper,DC=LAB,DC=LOCAL'
     ignore_errors: yes
