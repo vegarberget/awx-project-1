@@ -3,6 +3,8 @@
   hosts: "{{ VCENTER_PDC_NAME }}.lab.local"
 
   tasks:
+  - name: Lage OU
+    win_shell: NEW-ADOrganizationalUnit "{{ VCENTER_MILJO }}" –path "OU=Grupper,DC=LAB,DC=LOCAL"
   - name: Set up Ad group.
     win_domain_group:
       name: "{{ VCENTER_MILJO }}"
