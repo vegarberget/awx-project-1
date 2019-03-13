@@ -5,6 +5,6 @@
   tasks:
   - name: Set up Ad group.
     win_domain_group:
-    name: "{{ VCENTER_MILJO }}"
-    scope: global
-    path: OU="{{ VCENTER_MILJO }}",OU=Grupper,DC=LAB,DC=LOCAL
+      name: "{{ VCENTER_MILJO }}"
+      scope: global
+      path: OU="{{ VCENTER_MILJO }}",OU=Grupper,DC=LAB,DC=LOCAL
