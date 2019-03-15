@@ -4,7 +4,7 @@
 
   tasks:
   - name: Lager konfigurasjon for  MSSQL
-    win_shell: ((Get-Content -path \\pdc\delt\install\Biztalk-Deploy-master\SqlConfig\ConfigurationFile.ini -Raw) -replace 'SQL_SERVER_USER_ACCOUNT','lab\{{ VCENTER_MILJO }}SQLUser') | Set-Content -Path \\pdc\delt\{{ VCENTER_MILJO }}ConfigurationFile.ini
+    win_shell: ((Get-Content -path \\pdc\delt\install\Biztalk-Deploy-master\SqlConfig\ConfigurationFile.ini -Raw) -replace 'SQL_SERVER_USER_ACCOUNT','{{ VCENTER_MILJO }}SQLUser') | Set-Content -Path \\pdc\delt\{{ VCENTER_MILJO }}ConfigurationFile.ini
   - name: Lager konfigurasjon for  MSSQL
     win_shell: ((Get-Content -path \\pdc\delt\{{ VCENTER_MILJO }}ConfigurationFile.ini -Raw) -replace 'SQL_SERVER_PASSWORD','{{ VCENTER_SQL_SERVER_PASSWORD }}') | Set-Content -Path \\pdc\delt\{{ VCENTER_MILJO }}ConfigurationFile.ini
   - name: Install MSSQL
