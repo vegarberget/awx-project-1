@@ -9,7 +9,7 @@
     #  username: "{{ VCENTER_USERNAME }}"
     #  password: "{{ VCENTER_PASSWORD }}"
       validate_certs: False
-      name: "{{ VCENTER_GUEST_NAME }}"
+      name: "{{ VCENTER_MILJO }}{{ VCENTER_GUEST_NAME }}"
       template: "{{ VCENTER_TEMPLATE }}"
       datacenter: "{{ VCENTER_DATACENTER }}"
       datastore: "{{ VCENTER_DATASTORE }}"

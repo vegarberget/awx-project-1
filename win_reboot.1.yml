@@ -1,6 +1,6 @@
 ---
 - name: Install Windows Updates
-  hosts: "{{ VCENTER_GUEST_NAME }}.lab.local"
+  hosts: "{{ VCENTER_MILJO }}{{ VCENTER_GUEST_NAME }}.lab.local"
 
   tasks:
   - win_reboot:

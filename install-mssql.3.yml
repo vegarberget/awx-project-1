@@ -1,6 +1,6 @@
 ---
 - name: Install MSSQL
-  hosts: "{{ VCENTER_GUEST_NAME_2 }}.lab.local"
+  hosts: "{{ VCENTER_MILJO }}{{ VCENTER_GUEST_NAME_2 }}.lab.local"
 
   tasks:
   - name: Create temp folder
