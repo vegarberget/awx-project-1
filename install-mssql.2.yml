@@ -4,10 +4,10 @@
 
   tasks:
   - name: Lager konfigurasjon for  MSSQL
-    win_shell: ((Get-Content -path \\pdc\delt\install\Biztalk-Deploy-master\SqlConfig\ConfigurationFile.ini -Raw) -replace 'SQL_SERVER_USER_ACCOUNT','{{ VCENTER_SQL_SERVER_USER_ACCOUNT }}') | Set-Content -Path \\pdc\delt\ConfigurationFile.ini
+    win_shell: ((Get-Content -path \\pdc\delt\install\Biztalk-Deploy-master\SqlConfig\ConfigurationFile.ini -Raw) -replace 'SQL_SERVER_USER_ACCOUNT','{{ VCENTER_SQL_SERVER_USER_ACCOUNT }}') | Set-Content -Path \\pdc\delt\{{ VCENTER_MILJO }}ConfigurationFile.ini
   - name: Lager konfigurasjon for  MSSQL
-    win_shell: ((Get-Content -path \\pdc\delt\ConfigurationFile.ini -Raw) -replace 'SQL_SERVER_PASSWORD','{{ VCENTER_SQL_SERVER_PASSWORD }}') | Set-Content -Path \\pdc\delt\ConfigurationFile.ini
+    win_shell: ((Get-Content -path \\pdc\delt\{{ VCENTER_MILJO }}ConfigurationFile.ini -Raw) -replace 'SQL_SERVER_PASSWORD','{{ VCENTER_SQL_SERVER_PASSWORD }}') | Set-Content -Path \\pdc\delt\{{ VCENTER_MILJO }}ConfigurationFile.ini
   - name: Install MSSQL
-    win_command: \\pdc\delt\install\SQL_2016_sp2_dev\Setup.exe /ConfigurationFile=\\pdc\delt\ConfigurationFile.ini
+    win_command: \\pdc\delt\install\SQL_2016_sp2_dev\Setup.exe /ConfigurationFile=\\pdc\delt\{{ VCENTER_MILJO }}ConfigurationFile.ini
   - name: åpne brannmurport
     win_shell: New-NetFirewallRule -DisplayName "MSSQL ENGINE TCP" -Direction Inbound -LocalPort 1433 -Protocol TCP -Action Allow
