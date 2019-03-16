@@ -44,7 +44,7 @@
   - name: Lager konfigurasjon for  Biztalk
     win_shell: ((Get-Content -path \\pdc\delt\{{ VCENTER_MILJO }}BizTalkConfig_biz.xml -Raw) -replace 'BIZTALK_HOST_USER_GROUP','{{ VCENTER_DOMENE_NAVN }}\{{ VCENTER_MILJO }}{{ VCENTER_BIZTALK_HOST_USER_GROUP }}') | Set-Content -Path \\pdc\delt\{{ VCENTER_MILJO }}BizTalkConfig_biz.xml
   - name: Lager konfigurasjon for  Biztalk
-    win_shell: ((Get-Content -path \\pdc\delt\{{ VCENTER_MILJO }}BizTalkConfig_biz.xml -Raw) -replace 'BRUKERNAVN_BIZTALK_HOST_INSTANCE','{{ VCENTER_DOMENE_NAVN }}\{{ VCENTER_MILJO }}biztalkuser') | Set-Content -Path \\pdc\delt\{{ VCENTER_MILJO }}BizTalkConfig_biz.xml 
+    win_shell: ((Get-Content -path \\pdc\delt\{{ VCENTER_MILJO }}BizTalkConfig_biz.xml -Raw) -replace 'BRUKERNAVN_BIZTALK_HOST_INSTANCE','{{ VCENTER_MILJO }}biztalkuser') | Set-Content -Path \\pdc\delt\{{ VCENTER_MILJO }}BizTalkConfig_biz.xml 
   - name: Lager konfigurasjon for  Biztalk
     win_shell: ((Get-Content -path \\pdc\delt\{{ VCENTER_MILJO }}BizTalkConfig_biz.xml -Raw) -replace 'PASSORD_BIZTALK_HOST_INSTANCE','{{ VCENTER_PASSORD_BIZTALK_HOST_INSTANCE }}') | Set-Content -Path \\pdc\delt\{{ VCENTER_MILJO }}BizTalkConfig_biz.xml
   - name: Lager konfigurasjon for  Biztalk
