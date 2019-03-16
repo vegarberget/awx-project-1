@@ -4,4 +4,4 @@
 
   tasks:
   - name: Installerer MSSQL management
-    win_shell: \\pdc\delt\install\SQL_mng_mnt\SSMS-Setup-ENU.exe /install /quiet
+    win_command: \\pdc\delt\install\SQL_mng_mnt\SSMS-Setup-ENU.exe /install /quiet
