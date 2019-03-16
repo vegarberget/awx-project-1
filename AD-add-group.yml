@@ -7,25 +7,25 @@
     win_shell: NEW-ADOrganizationalUnit "{{ VCENTER_MILJO }}" –path "OU=Grupper,DC=LAB,DC=LOCAL"
     ignore_errors: yes
   - name: Lage AD gruppe
-    win_shell: NEW-ADGroup –name "{{ VCENTER_MILJO }} BizTalk Application Users" –groupscope Global –path 'OU="{{ VCENTER_MILJO }}",OU=Grupper,DC=LAB,DC=LOCAL'
+    win_shell: NEW-ADGroup –name "{{ VCENTER_MILJO }}BizTalk Application Users" –groupscope Global –path 'OU="{{ VCENTER_MILJO }}",OU=Grupper,DC=LAB,DC=LOCAL'
     ignore_errors: yes
   - name: Lage AD gruppe
-    win_shell: NEW-ADGroup –name "{{ VCENTER_MILJO }} BizTalk Isolated Host Users" –groupscope Global –path 'OU="{{ VCENTER_MILJO }}",OU=Grupper,DC=LAB,DC=LOCAL'
+    win_shell: NEW-ADGroup –name "{{ VCENTER_MILJO }}BizTalk Isolated Host Users" –groupscope Global –path 'OU="{{ VCENTER_MILJO }}",OU=Grupper,DC=LAB,DC=LOCAL'
     ignore_errors: yes
   - name: Lage AD gruppe
-    win_shell: NEW-ADGroup –name "{{ VCENTER_MILJO }} BizTalk Server Administrators" –groupscope Global –path 'OU="{{ VCENTER_MILJO }}",OU=Grupper,DC=LAB,DC=LOCAL'
+    win_shell: NEW-ADGroup –name "{{ VCENTER_MILJO }}BizTalk Server Administrators" –groupscope Global –path 'OU="{{ VCENTER_MILJO }}",OU=Grupper,DC=LAB,DC=LOCAL'
     ignore_errors: yes
   - name: Lage AD gruppe
-    win_shell: NEW-ADGroup –name "{{ VCENTER_MILJO }} BizTalk Server B2B Operators" –groupscope Global –path 'OU="{{ VCENTER_MILJO }}",OU=Grupper,DC=LAB,DC=LOCAL'
+    win_shell: NEW-ADGroup –name "{{ VCENTER_MILJO }}BizTalk Server B2B Operators" –groupscope Global –path 'OU="{{ VCENTER_MILJO }}",OU=Grupper,DC=LAB,DC=LOCAL'
     ignore_errors: yes
   - name: Lage AD gruppe
-    win_shell: NEW-ADGroup –name "{{ VCENTER_MILJO }} BizTalk Server Operators" –groupscope Global –path 'OU="{{ VCENTER_MILJO }}",OU=Grupper,DC=LAB,DC=LOCAL'
+    win_shell: NEW-ADGroup –name "{{ VCENTER_MILJO }}BizTalk Server Operators" –groupscope Global –path 'OU="{{ VCENTER_MILJO }}",OU=Grupper,DC=LAB,DC=LOCAL'
     ignore_errors: yes
   - name: Lage AD gruppe
-    win_shell: NEW-ADGroup –name "{{ VCENTER_MILJO }} sso administrators" –groupscope Global –path 'OU="{{ VCENTER_MILJO }}",OU=Grupper,DC=LAB,DC=LOCAL'
+    win_shell: NEW-ADGroup –name "{{ VCENTER_MILJO }}sso administrators" –groupscope Global –path 'OU="{{ VCENTER_MILJO }}",OU=Grupper,DC=LAB,DC=LOCAL'
     ignore_errors: yes
   - name: Lage AD gruppe
-    win_shell: NEW-ADGroup –name "{{ VCENTER_MILJO }} sso affiliate administrators" –groupscope Global –path 'OU="{{ VCENTER_MILJO }}",OU=Grupper,DC=LAB,DC=LOCAL'
+    win_shell: NEW-ADGroup –name "{{ VCENTER_MILJO }}sso affiliate administrators" –groupscope Global –path 'OU="{{ VCENTER_MILJO }}",OU=Grupper,DC=LAB,DC=LOCAL'
     ignore_errors: yes
   - name: Lage AD bruker
     win_shell: New-ADUser -SamAccountName "{{ VCENTER_MILJO }}SSOUser" -Name "{{ VCENTER_MILJO }}SSOUser" -UserPrincipalName "{{ VCENTER_MILJO }}SSOUser@local.lab" -AccountPassword (ConvertTo-SecureString -AsPlainText "Password123!" -Force) -Enabled $true -PasswordNeverExpires $true -Path 'OU="{{ VCENTER_MILJO }}",OU=Grupper,DC=LAB,DC=LOCAL' 
@@ -37,8 +37,8 @@
     win_shell: New-ADUser -SamAccountName "{{ VCENTER_MILJO }}SQLUser" -Name "{{ VCENTER_MILJO }}SQLUser" -UserPrincipalName "{{ VCENTER_MILJO }}SQLUser@local.lab" -AccountPassword (ConvertTo-SecureString -AsPlainText "Password123!" -Force) -Enabled $true -PasswordNeverExpires $true -Path 'OU="{{ VCENTER_MILJO }}",OU=Grupper,DC=LAB,DC=LOCAL' 
     ignore_errors: yes
   - name: Flytte AD Bruker
-    win_shell: Add-ADGroupMember "{{ VCENTER_MILJO }} sso administrators" -Members (get-aduser "{{ VCENTER_MILJO }}SSOUser")
+    win_shell: Add-ADGroupMember "{{ VCENTER_MILJO }}sso administrators" -Members (get-aduser "{{ VCENTER_MILJO }}SSOUser")
     ignore_errors: yes
   - name: Flytte AD Bruker
-    win_shell: Add-ADGroupMember "{{ VCENTER_MILJO }} BizTalk Server Administrators" -Members (get-aduser "{{ VCENTER_MILJO }}biztalkuser")
+    win_shell: Add-ADGroupMember "{{ VCENTER_MILJO }}BizTalk Server Administrators" -Members (get-aduser "{{ VCENTER_MILJO }}biztalkuser")
     ignore_errors: yes
