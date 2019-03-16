@@ -16,9 +16,9 @@
   - name: Lager konfigurasjon for  ENTSSO
     win_shell: ((Get-Content -path \\pdc\delt\{{ VCENTER_MILJO }}BizTalkConfig_esso.xml -Raw) -replace 'ENTSSO_BACKUP_SECRET_FIL_STI','{{ VCENTER_ENTSSO_BACKUP_SECRET_FILE }}') | Set-Content -Path \\pdc\delt\{{ VCENTER_MILJO }}BizTalkConfig_esso.xml
   - name: Lager konfigurasjon for  ENTSSO
-    win_shell: ((Get-Content -path \\pdc\delt\{{ VCENTER_MILJO }}BizTalkConfig_esso.xml -Raw) -replace 'GROUP_SSO_ADMINISTRATORS','{{ VCENTER_MILJO }}{{ VCENTER_GROUP_SSO_ADMINISTRATORS }}') | Set-Content -Path \\pdc\delt\{{ VCENTER_MILJO }}BizTalkConfig_esso.xml
+    win_shell: ((Get-Content -path \\pdc\delt\{{ VCENTER_MILJO }}BizTalkConfig_esso.xml -Raw) -replace 'GROUP_SSO_ADMINISTRATORS','{{ VCENTER_DOMENE_NAVN }}\{{ VCENTER_MILJO }}{{ VCENTER_GROUP_SSO_ADMINISTRATORS }}') | Set-Content -Path \\pdc\delt\{{ VCENTER_MILJO }}BizTalkConfig_esso.xml
   - name: Lager konfigurasjon for  ENTSSO
-    win_shell: ((Get-Content -path \\pdc\delt\{{ VCENTER_MILJO }}BizTalkConfig_esso.xml -Raw) -replace 'GROUP_SSO_AFFILIATE_ADMINISTRATORS','{{ VCENTER_MILJO }}{{ VCENTER_GROUP_SSO_AFFILIATE_ADMINISTRATORS }}') | Set-Content -Path \\pdc\delt\{{ VCENTER_MILJO }}BizTalkConfig_esso.xml  
+    win_shell: ((Get-Content -path \\pdc\delt\{{ VCENTER_MILJO }}BizTalkConfig_esso.xml -Raw) -replace 'GROUP_SSO_AFFILIATE_ADMINISTRATORS','{{ VCENTER_DOMENE_NAVN }}\{{ VCENTER_MILJO }}{{ VCENTER_GROUP_SSO_AFFILIATE_ADMINISTRATORS }}') | Set-Content -Path \\pdc\delt\{{ VCENTER_MILJO }}BizTalkConfig_esso.xml  
   - name: Lager konfigurasjon for  Biztalk
     win_shell: ((Get-Content -path \\pdc\delt\install\Biztalk-Deploy-master\BiztalkConfig\BizTalkConfig_biz.xml -Raw) -replace 'servernavn','{{ VCENTER_MILJO }}{{ VCENTER_GUEST_NAME_2 }}') | Set-Content -Path \\pdc\delt\{{ VCENTER_MILJO }}BizTalkConfig_biz.xml
   - name: Lager konfigurasjon for  Biztalk
@@ -32,20 +32,20 @@
   - name: Lager konfigurasjon for  Biztalk
     win_shell: ((Get-Content -path \\pdc\delt\{{ VCENTER_MILJO }}BizTalkConfig_biz.xml -Raw) -replace 'ENTSSO_BACKUP_SECRET_FIL_STI','{{ VCENTER_ENTSSO_BACKUP_SECRET_FILE }}') | Set-Content -Path \\pdc\delt\{{ VCENTER_MILJO }}BizTalkConfig_biz.xml
   - name: Lager konfigurasjon for  Biztalk
-    win_shell: ((Get-Content -path \\pdc\delt\{{ VCENTER_MILJO }}BizTalkConfig_biz.xml -Raw) -replace 'GROUP_SSO_ADMINISTRATORS','{{ VCENTER_MILJO }}{{ VCENTER_GROUP_SSO_ADMINISTRATORS }}') | Set-Content -Path \\pdc\delt\{{ VCENTER_MILJO }}BizTalkConfig_biz.xml
+    win_shell: ((Get-Content -path \\pdc\delt\{{ VCENTER_MILJO }}BizTalkConfig_biz.xml -Raw) -replace 'GROUP_SSO_ADMINISTRATORS','{{ VCENTER_DOMENE_NAVN }}\{{ VCENTER_MILJO }}{{ VCENTER_GROUP_SSO_ADMINISTRATORS }}') | Set-Content -Path \\pdc\delt\{{ VCENTER_MILJO }}BizTalkConfig_biz.xml
   - name: Lager konfigurasjon for  Biztalk
-    win_shell: ((Get-Content -path \\pdc\delt\{{ VCENTER_MILJO }}BizTalkConfig_biz.xml -Raw) -replace 'GROUP_SSO_AFFILIATE_ADMINISTRATORS','{{ VCENTER_MILJO }}{{ VCENTER_GROUP_SSO_AFFILIATE_ADMINISTRATORS }}') | Set-Content -Path \\pdc\delt\{{ VCENTER_MILJO }}BizTalkConfig_biz.xml
+    win_shell: ((Get-Content -path \\pdc\delt\{{ VCENTER_MILJO }}BizTalkConfig_biz.xml -Raw) -replace 'GROUP_SSO_AFFILIATE_ADMINISTRATORS','{{ VCENTER_DOMENE_NAVN }}\{{ VCENTER_MILJO }}{{ VCENTER_GROUP_SSO_AFFILIATE_ADMINISTRATORS }}') | Set-Content -Path \\pdc\delt\{{ VCENTER_MILJO }}BizTalkConfig_biz.xml
   - name: Lager konfigurasjon for  Biztalk
-    win_shell: ((Get-Content -path \\pdc\delt\{{ VCENTER_MILJO }}BizTalkConfig_biz.xml -Raw) -replace 'BIZTALK_ADMINISTRATOR_GROUP','{{ VCENTER_MILJO }}{{ VCENTER_BIZTALK_ADMINISTRATOR_GROUP }}') | Set-Content -Path \\pdc\delt\{{ VCENTER_MILJO }}BizTalkConfig_biz.xml
+    win_shell: ((Get-Content -path \\pdc\delt\{{ VCENTER_MILJO }}BizTalkConfig_biz.xml -Raw) -replace 'BIZTALK_ADMINISTRATOR_GROUP','{{ VCENTER_DOMENE_NAVN }}\{{ VCENTER_MILJO }}{{ VCENTER_BIZTALK_ADMINISTRATOR_GROUP }}') | Set-Content -Path \\pdc\delt\{{ VCENTER_MILJO }}BizTalkConfig_biz.xml
   - name: Lager konfigurasjon for  Biztalk
-    win_shell: ((Get-Content -path \\pdc\delt\{{ VCENTER_MILJO }}BizTalkConfig_biz.xml -Raw) -replace 'BIZTALK_SERVER_OPERATORS_GROUP','{{ VCENTER_MILJO }}{{ VCENTER_BIZTALK_SERVER_OPERATORS_GROUP }}') | Set-Content -Path \\pdc\delt\{{ VCENTER_MILJO }}BizTalkConfig_biz.xml
+    win_shell: ((Get-Content -path \\pdc\delt\{{ VCENTER_MILJO }}BizTalkConfig_biz.xml -Raw) -replace 'BIZTALK_SERVER_OPERATORS_GROUP','{{ VCENTER_DOMENE_NAVN }}\{{ VCENTER_MILJO }}{{ VCENTER_BIZTALK_SERVER_OPERATORS_GROUP }}') | Set-Content -Path \\pdc\delt\{{ VCENTER_MILJO }}BizTalkConfig_biz.xml
   - name: Lager konfigurasjon for  Biztalk
-    win_shell: ((Get-Content -path \\pdc\delt\{{ VCENTER_MILJO }}BizTalkConfig_biz.xml -Raw) -replace 'BIZTALK_SERVER_B2B_OPERATORS_GROUP','{{ VCENTER_MILJO }}{{ VCENTER_BIZTALK_SERVER_B2B_OPERATORS_GROUP }}') | Set-Content -Path \\pdc\delt\{{ VCENTER_MILJO }}BizTalkConfig_biz.xml
+    win_shell: ((Get-Content -path \\pdc\delt\{{ VCENTER_MILJO }}BizTalkConfig_biz.xml -Raw) -replace 'BIZTALK_SERVER_B2B_OPERATORS_GROUP','{{ VCENTER_DOMENE_NAVN }}\{{ VCENTER_MILJO }}{{ VCENTER_BIZTALK_SERVER_B2B_OPERATORS_GROUP }}') | Set-Content -Path \\pdc\delt\{{ VCENTER_MILJO }}BizTalkConfig_biz.xml
   - name: Lager konfigurasjon for  Biztalk
-    win_shell: ((Get-Content -path \\pdc\delt\{{ VCENTER_MILJO }}BizTalkConfig_biz.xml -Raw) -replace 'BIZTALK_HOST_USER_GROUP','{{ VCENTER_MILJO }}{{ VCENTER_BIZTALK_HOST_USER_GROUP }}') | Set-Content -Path \\pdc\delt\{{ VCENTER_MILJO }}BizTalkConfig_biz.xml
+    win_shell: ((Get-Content -path \\pdc\delt\{{ VCENTER_MILJO }}BizTalkConfig_biz.xml -Raw) -replace 'BIZTALK_HOST_USER_GROUP','{{ VCENTER_DOMENE_NAVN }}\{{ VCENTER_MILJO }}{{ VCENTER_BIZTALK_HOST_USER_GROUP }}') | Set-Content -Path \\pdc\delt\{{ VCENTER_MILJO }}BizTalkConfig_biz.xml
   - name: Lager konfigurasjon for  Biztalk
-    win_shell: ((Get-Content -path \\pdc\delt\{{ VCENTER_MILJO }}BizTalkConfig_biz.xml -Raw) -replace 'BRUKERNAVN_BIZTALK_HOST_INSTANCE','{{ VCENTER_MILJO }}biztalkuser') | Set-Content -Path \\pdc\delt\{{ VCENTER_MILJO }}BizTalkConfig_biz.xml 
+    win_shell: ((Get-Content -path \\pdc\delt\{{ VCENTER_MILJO }}BizTalkConfig_biz.xml -Raw) -replace 'BRUKERNAVN_BIZTALK_HOST_INSTANCE','{{ VCENTER_DOMENE_NAVN }}\{{ VCENTER_MILJO }}biztalkuser') | Set-Content -Path \\pdc\delt\{{ VCENTER_MILJO }}BizTalkConfig_biz.xml 
   - name: Lager konfigurasjon for  Biztalk
     win_shell: ((Get-Content -path \\pdc\delt\{{ VCENTER_MILJO }}BizTalkConfig_biz.xml -Raw) -replace 'PASSORD_BIZTALK_HOST_INSTANCE','{{ VCENTER_PASSORD_BIZTALK_HOST_INSTANCE }}') | Set-Content -Path \\pdc\delt\{{ VCENTER_MILJO }}BizTalkConfig_biz.xml
   - name: Lager konfigurasjon for  Biztalk
-    win_shell: ((Get-Content -path \\pdc\delt\{{ VCENTER_MILJO }}BizTalkConfig_biz.xml -Raw) -replace 'BIZTALK_ISOLATED_HOST_USER_GROUP','{{ VCENTER_MILJO }}{{ VCENTER_BIZTALK_ISOLATED_HOST_USER_GROUP }}') | Set-Content -Path \\pdc\delt\{{ VCENTER_MILJO }}BizTalkConfig_biz.xml
+    win_shell: ((Get-Content -path \\pdc\delt\{{ VCENTER_MILJO }}BizTalkConfig_biz.xml -Raw) -replace 'BIZTALK_ISOLATED_HOST_USER_GROUP','{{ VCENTER_DOMENE_NAVN }}\{{ VCENTER_MILJO }}{{ VCENTER_BIZTALK_ISOLATED_HOST_USER_GROUP }}') | Set-Content -Path \\pdc\delt\{{ VCENTER_MILJO }}BizTalkConfig_biz.xml
