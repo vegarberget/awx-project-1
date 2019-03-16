@@ -1,0 +1,7 @@
+---
+- name: Install MSSQL management
+  hosts: "{{ VCENTER_MILJO }}{{ VCENTER_GUEST_NAME }}.lab.local"
+
+  tasks:
+  - name: Installerer MSSQL management
+    win_shell: \\pdc\delt\install\SQL_mng_mnt\SSMS-Setup-ENU.exe /install /quiet
