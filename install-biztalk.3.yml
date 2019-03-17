@@ -4,4 +4,4 @@
 
   tasks:
   - name: Install Minimal Biztalk
-    win_command: \\pdc\delt\install\BTS_2016_Dev\BizTalkServer\setup.exe /NORESTART /CABPATH \\pdc\delt\install\Biztalk-Deploy-master\bin\BtsRedistW2K12R2EN64\BtsRedistW2K12R2EN64.cab /S \\pdc\delt\install\Biztalk-Deploy-master\BiztalkConfig\features-minimal.xml /L c:\log.txt 
+    win_command: \\pdc\delt\install\BTS_2016_Dev\BizTalkServer\setup.exe /NORESTART /CABPATH \\pdc\delt\install\Biztalk-Deploy-master\bin\BtsRedistW2K12R2EN64\BtsRedistW2K12R2EN64.cab /S \\pdc\delt\install\Biztalk-Deploy-master\BiztalkConfig\features-minimal.xml /L c:\log.txt
