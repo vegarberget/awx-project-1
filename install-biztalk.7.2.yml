@@ -7,3 +7,8 @@
     win_command: Configuration.exe /S \\pdc\delt\{{ VCENTER_MILJO }}BizTalkConfig_biz.xml /noprogressbar /L c:\biz-log.txt
     args:
       chdir: c:\Program Files (x86)\Microsoft BizTalk Server 2016\
+    become: yes
+    become_method: runas
+    vars:
+      ansible_become_user: 'LAB\administrator'
+      ansible_become_pass: 'Password123!'
