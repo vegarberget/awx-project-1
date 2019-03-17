@@ -4,7 +4,7 @@
 
   tasks:
   - name: Configure Biztalk
-    win_shell: 'Configuration.exe /S \\pdc\delt\{{ VCENTER_MILJO }}BizTalkConfig_esso.xml /noprogressbar /L c:\sso-log.txt'
+    win_command: 'Configuration.exe /S \\pdc\delt\{{ VCENTER_MILJO }}BizTalkConfig_esso.xml /noprogressbar /L c:\sso-log.txt'
     args:
       chdir: c:\Program Files (x86)\Microsoft BizTalk Server 2016\
     become: yes
