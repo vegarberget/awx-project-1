@@ -51,3 +51,6 @@
   - name: Flytte AD Bruker
     win_shell: Add-ADGroupMember "{{ VCENTER_MILJO }}BizTalk Application Users" -Members (get-aduser "{{ VCENTER_MILJO }}biztalkuser")
     ignore_errors: yes
+  - name: Flytte AD Bruker
+    win_shell: Add-ADGroupMember "{{ VCENTER_MILJO }}BizTalk Isolated Host Users" -Members (get-aduser "{{ VCENTER_MILJO }}biztalkuser")
+    ignore_errors: yes
